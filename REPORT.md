@@ -1,6 +1,6 @@
 # Lab 2 report - explaining our demand model
 
-**Authors:** _replace this line with your name_
+Authors: Manshi Patel (Partner A), Davide Trani (Partner B)
 <!-- ^ You and your partner BOTH edit THIS ONE LINE with your name, each on your own branch.
      When the second pull request merges you'll get a merge conflict right here - that's on
      purpose. Resolve it by keeping BOTH names. Everything else below is in separate sections,
@@ -21,11 +21,11 @@ Replace every `=>` with a real sentence; every number gets a unit.*
 ## Local - one hour explained (Partner B)
 ![predicted vs actual](images/predicted_vs_actual.png)
 
-=> One sentence: does it track the diagonal? roughly how far off is a typical hour?
+The points mostly follow the diagonal (R² = 0.83 on the test hours), and a typical hour is off by about 662 MW.
 
 ![SHAP waterfall for the peak hour](images/shap_local.png)
 
-=> One sentence: for the peak hour, what pushed the prediction up, and what pulled it down?
+On Aug 18, 2026 at 17:00 the model predicted more than the actual demand (19,386 MW vs 18,585 MW). The biggest push up was hour_of_day (+2,858 MW), then temp_f at 85 °F (+1,133 MW), while the blue features, dewpoint_f and wind_kt, had only a small effect (−30 MW and −7 MW).
 
 ## Combined (both, optional)
 ![SHAP dependence](images/shap_dependence.png)
@@ -33,4 +33,4 @@ Replace every `=>` with a real sentence; every number gets a unit.*
 => One sentence tying Lab 1 to Lab 2: *"it's the clock as much as the thermometer"* - in your words.
 
 ## What this explanation can't tell us
-=> One honest sentence. (SHAP explains THIS model, not the real world; one summer, one region; correlation, not proof.)
+SHAP explains this model, not the real world: it shows the pattern the model leaned on (one summer, one region), not proof of cause.
