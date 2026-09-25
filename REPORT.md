@@ -12,11 +12,13 @@ Replace every `=>` with a real sentence; every number gets a unit.*
 ## Global - what the model leans on overall (Partner A)
 ![built-in importances](images/importances_builtin.png)
 
-=> One sentence: which feature does the model lean on most, by magnitude alone?
+=> One sentence: which feature does the model lean on most, by magnitude alone? 
+The model relies most on hour_of_day, since it has the largest spread of SHAP values which has the biggest impact on the model output.
 
 ![SHAP beeswarm](images/shap_global.png)
 
 => One sentence: which feature is #1, and does a HIGH value push demand up or down?
+The most important feature is hour_of_day because it has the biggest range of SHAP values. Higher values of hour_of_day usually increase the predicted demand, while lower values generally decrease it.
 
 ## Local - one hour explained (Partner B)
 ![predicted vs actual](images/predicted_vs_actual.png)
